@@ -17,7 +17,10 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     margin-top: 10%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
+
 
 
 h3 {
@@ -33,6 +36,10 @@ figcaption {
     font-style: italic;
     font-size: 0.75em;
     color: rgba(0, 0, 139, 0.8); 
+}
+
+.image-1, .image-2, .image-3 {
+    border: 2px solid  rgba(0, 0, 139, 0.8);
 }
 
 
