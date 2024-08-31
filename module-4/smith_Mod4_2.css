@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    color: rgba(0, 0, 139, 0.8); 
+    text-align: center;
+}
+
+#image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    margin-top: 10%;
+}
+
+
+h3 {
+    color: rgba(0, 0, 139, 0.8);
+    text-align: center;
+}
+
+figure {
+    text-align: center;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.75em;
+    color: rgba(0, 0, 139, 0.8); 
+}
+
+
+.last-div {
+    width: 100%;
+    margin-top: 60px;
+    text-align: right;
+    width: 100%; 
+    float: right; 
+    margin-bottom: 20px;
+
+}
+
+.last-div a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
