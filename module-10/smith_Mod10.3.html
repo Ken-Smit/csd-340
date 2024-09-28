@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kenneth Smith's CSD 340 Landing Page</title>
+        <link rel="stylesheet" href="site.css">
+        <script>
+            let isImageOne = true; // Flag to track which image is currently displayed
+
+            function toggleImage() {
+                const imageElement = document.getElementById("toggleImage");
+                const messageElement = document.getElementById("message");
+
+                if (isImageOne) {
+                    imageElement.src = "images/chicago-night.jpg"; // Change to the second image
+                    messageElement.innerText = "You clicked the image!"; // Change message text
+                    messageElement.style.display = "block"; // Make the message visible
+                } else {
+                    imageElement.src = "images/chicago-day.jpg"; // Change back to the first image
+                    messageElement.style.display = "none"; // Hide the message
+                }
+
+                isImageOne = !isImageOne; // Toggle the flag
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Assignment 10.3: JavaScript - Part 2</h1>
+        </header>
+        
+        <main> 
+            <section>
+                <h2>Click the Image Below</h2>
+                <img id="toggleImage" src="images/chicago-day.jpg" alt="An image of Chicago Skyline in the Daytime" 
+                     width="400" height="300" onclick="toggleImage()" style="cursor: pointer;"> <!-- Set fixed size -->
+                <p id="message" style="display: none; color: blue;"></p> <!-- Hidden message that shows on click -->
+            </section>
+        </main>
+    </body>
+</html>
