@@ -1,0 +1,69 @@
+<!--Kenneth Smith 8-17-2024 Assignment 9.3-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name = "description" content="Assigment 9-3"/>
+        <meta name = "keywords" content="HTML/CSS">
+        <meta name = "author" content="Kenneth Smith">
+        <meta name = "viewport" content="width=device-width, intial-scale-1.0">
+        <title>CSD 340 Development with HTML and CSS</title>
+        <script>
+            var firstValue = "captures"
+            var secondValue = "hobbies"
+            var thirdValue = "enviroment"
+            var fourthValue = "personality"
+        </script>
+    </head>
+    
+    <body>
+        <div id="container">
+            <h1>Assignment 9.3: JavaScript - Part 1</h1>
+            <h2>Chapter 1: AutoBiography</h2>
+            <p class="'intro">
+                My name is Kenneth Smith, and I’m from Chicago, Illinois. I have a deep passion for learning, 
+                and when something <span id="captures">____</span> my interest, I dive in headfirst, always hungry for more knowledge. 
+                often find myself on YouTube, soaking up new information. It’s an incredible resource, filled with 
+                valuable knowledge just waiting to be discovered. <span class="sentence">Over the years, I’ve taught myself many practical 
+                life skills through the internet.</span> <br>
+                <button type="button" onclick="document.getElementById('captures').innerHTML = firstValue">captures</button>
+            </p>
+
+            <p>
+                I have a variety of <span id="hobbies">_______</span> that keep me engaged. <span class="sentence">I love being outdoors, gaming, coding, and working 
+                with cars.</span> There’s something special about nature—getting fresh air, soaking in the sunlight, and feeling
+                the grass beneath your feet are simple pleasures that help me stay grounded and recharge. Being near water,
+                especially the ocean, is my favorite; it’s incredibly rejuvenating. Gaming has always been a part of my life—growing
+                up, my family and I would often play together to unwind after a long day. It’s a great way to escape reality for a while.
+                Coding has become a new passion of mine in recent years. I’ve enjoyed learning new programming languages and applying them 
+                to projects. As for cars, I’ve been a technician for 12 years, and building performance vehicles has naturally become 
+                something I love. <br>
+                <button type="button" onclick="document.getElementById('hobbies').innerHTML = secondValue">hobbies</button>
+            </p>
+
+            <p>
+               <span class="sentence">"My childhood was incredible!</span> I’m fortunate to have grown up in a loving and caring <span id="enviroment">____</span>, thanks 
+               to a wonderful family. I have so many amazing memories from that time, it’s hard to know where to start. My parents instilled strong values in me, 
+               pushing me to be tough when it was necessary. They also ingrained in me a powerful work ethic, and I truly believe they were 
+               the foundation of this quality I possess today. Sometimes, I wish I could relive those years—it was such a special time in my life!<br>
+               <button type="button" onclick="document.getElementById('enviroment').innerHTML = thirdValue">enviroment</button>
+            </p>
+
+            <p>
+                I’m an easygoing person with a laid-back, chill <span id="personality">____</span>. I’m easy to get along with and don’t need much to be content.
+                I hold myself to high standards, always striving to become a better person each day. <span class ="sentence">I do my best to reach my goals, 
+                no matter the challenges that come my way.</span> That’s a little about me. <br>
+                <button type="button" onclick="document.getElementById('personality').innerHTML = fourthValue">personality</button>
+            </p>
+
+            <hr>
+            
+            <address>
+                <a href="//www.bellevue.edu/">Bellevue University</a>
+                <p>1000 Galvin Road South</p>
+                <p>Bellevue, Nebraska 68005</p>
+                
+            </address>
+        </div>
+    </body>
+</html>
