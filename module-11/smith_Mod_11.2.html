@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 140px;
+            padding: 10px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #displayArea {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+    
+    <div id="container">
+        <input type="text" id="taskInput" placeholder="Enter something...">
+        
+        <button onclick="addToArray()">Add</button>
+        <button onclick="deleteLast()">Delete Last Entry</button>
+        <button onclick="displayArray()">Display</button>
+        
+        <div id="displayArea"></div>
+    </div>
+
+    <script>
+        let itemsArray = [];
+
+        function addToArray() {
+            const input = document.getElementById('taskInput').value;
+            if (input) {
+                itemsArray.push(input);
+                alert(`Added: "${input}" to the list at position ${itemsArray.length}.`);
+                document.getElementById('taskInput').value = ''; // Clear input field
+            } else {
+                alert("Please enter something before adding.");
+            }
+        }
+
+        function deleteLast() {
+            if (itemsArray.length > 0) {
+                const removedItem = itemsArray.pop();
+                alert(`Deleted: "${removedItem}" from the list.`);
+            } else {
+                alert("No items to delete.");
+            }
+        }
+
+        function displayArray() {
+            const displayArea = document.getElementById('displayArea');
+            displayArea.innerHTML = ""; // Clear previous display
+            if (itemsArray.length > 0) {
+                itemsArray.forEach((item, index) => {
+                    displayArea.innerHTML += `${index + 1}. ${item}<br>`;
+                });
+            } else {
+                displayArea.innerHTML = "No items to display.";
+            }
+        }
+    </script>
+
+</body>
+</html>
