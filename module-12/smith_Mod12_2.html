@@ -1,21 +1,56 @@
-<!-- Kenneth Smith 10-12-24 Assignment 12.2 -->
+<!--Kenneth Smith Assignment 12.2 10-12-2024-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSD 340 Web Development with HTML and CSS</title>
+    <link href="smith_mod_12_2.css" rel="stylesheet">
 </head>
+
 <body>
+    <div id="container">
+        <h1>Assignment 12.2: JavaScript - Part 4</h1>
+        
+        <div class="side-by-side-container">
+            <div class="left-div">
+                <h3>Top 10 Favorite Books</h3>
+                
+                <!-- Ordered list that will be dynamically updated -->
+                <ol id="bookList">
+                    <li>The Art of War</li>
+                    <li>Charting and Technical Analysis</li>
+                    <li>Harry Potter and Chamber of Secrets</li>
+                    <li>Harry Potter and the Goblet of Fire</li>
+                    <li>Naruto Shippuden Manga</li>
+                    <li>DragonBall Z Manga</li>
+                    <li>Lord of the Rings</li>
+                    <li>48 Laws of Power</li>
+                    <li>Can't Hurt Me</li>
+                    <li>Harry Potter and the Order of the Phoenix</li>
+                </ol>
 
-    <h1>Assignment 12.2: JavaScript - Part 4</h1>
+                <!-- Buttons to trigger sorting -->
+                <button onclick="topToBottom()">Top to Bottom</button>
+                <button onclick="bottomToTop()">Bottom to Top</button>
+            </div> 
+            
+            <div class="right-div">
+                <h3>5 Things I've Learned Since the Course Started</h3>
+                <ul>
+                    <li>Host a website using your GitHub profile</li>
+                    <li>Consider how the human brain thinks when building a website</li>
+                    <li>Use colors that complement each other when designing a website</li>
+                    <li>Check your code for errors using the HTML/CSS validator</li>
+                    <li>Using multiple HTML files in one project</li>
+                </ul>
+            </div>
+        </div>
 
-    <!-- Buttons to trigger sorting -->
-    <button onclick="topToBottom()">Top to Bottom</button>
-    <button onclick="bottomToTop()">Bottom to Top</button>
-
-    <!-- Div to display the list of books -->
-    <div id="bookList"></div>
+        <div class="last-div">
+            <a href="index.html">Portal Page</a>
+        </div>  
+    </div>
 
     <script>
        // Array of Top Books
@@ -35,25 +70,24 @@
        // Function to display the array elements in ascending order
        function topToBottom() {
            let sortedBooks = TopBooks.slice().sort();  // Sort in ascending order
-           let output = "<h2>Books (Top to Bottom):</h2><ul>";
-
-           for (let i = 0; i < sortedBooks.length; i++) {
-               output += "<li>" + sortedBooks[i] + "</li>";
-           }
-           output += "</ul>";
-           document.getElementById("bookList").innerHTML = output;
+           updateList(sortedBooks);
        }
 
        // Function to display the array elements in descending order
        function bottomToTop() {
            let sortedBooks = TopBooks.slice().sort().reverse();  // Sort in descending order
-           let output = "<h2>Books (Bottom to Top):</h2><ul>";
+           updateList(sortedBooks);
+       }
 
-           for (let i = 0; i < sortedBooks.length; i++) {
-               output += "<li>" + sortedBooks[i] + "</li>";
+       // Function to update the ordered list 
+       function updateList(booksArray) {
+           const bookList = document.getElementById("bookList");
+           bookList.innerHTML = "";  // Clear current list
+           for (let i = 0; i < booksArray.length; i++) {
+               let listItem = document.createElement("li");
+               listItem.textContent = booksArray[i];
+               bookList.appendChild(listItem);  // Add each book as an <li> element
            }
-           output += "</ul>";
-           document.getElementById("bookList").innerHTML = output;
        }
     </script>
 
