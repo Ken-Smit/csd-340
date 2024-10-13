@@ -1,0 +1,61 @@
+<!-- Kenneth Smith 10-12-24 Assignment 12.2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+</head>
+<body>
+
+    <h1>Assignment 12.2: JavaScript - Part 4</h1>
+
+    <!-- Buttons to trigger sorting -->
+    <button onclick="topToBottom()">Top to Bottom</button>
+    <button onclick="bottomToTop()">Bottom to Top</button>
+
+    <!-- Div to display the list of books -->
+    <div id="bookList"></div>
+
+    <script>
+       // Array of Top Books
+       const TopBooks = [
+           "The Art of War", 
+           "Charting and Technical Analysis", 
+           "Harry Potter and Chamber of Secrets",
+           "Harry Potter and the Goblet of Fire", 
+           "Naruto Shippuden Manga", 
+           "DragonBall Z Manga", 
+           "Lord of the Rings",
+           "48 Laws of Power", 
+           "Can't Hurt Me", 
+           "Harry Potter and the Order of the Phoenix"
+       ];
+
+       // Function to display the array elements in ascending order
+       function topToBottom() {
+           let sortedBooks = TopBooks.slice().sort();  // Sort in ascending order
+           let output = "<h2>Books (Top to Bottom):</h2><ul>";
+
+           for (let i = 0; i < sortedBooks.length; i++) {
+               output += "<li>" + sortedBooks[i] + "</li>";
+           }
+           output += "</ul>";
+           document.getElementById("bookList").innerHTML = output;
+       }
+
+       // Function to display the array elements in descending order
+       function bottomToTop() {
+           let sortedBooks = TopBooks.slice().sort().reverse();  // Sort in descending order
+           let output = "<h2>Books (Bottom to Top):</h2><ul>";
+
+           for (let i = 0; i < sortedBooks.length; i++) {
+               output += "<li>" + sortedBooks[i] + "</li>";
+           }
+           output += "</ul>";
+           document.getElementById("bookList").innerHTML = output;
+       }
+    </script>
+
+</body>
+</html>
