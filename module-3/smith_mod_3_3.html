@@ -9,14 +9,12 @@
 </head>
 <body>
     <div id="container">
-        <h1>Assignment 12.2: JavaScript - Part 4</h1>
+        <h1>Assignment 3.3 Build a Web Page Exercise - Part 3</h1>
         
         <div class="side-by-side-container">
             <div class="left-div">
                 <h3>Top 10 Favorite Books</h3>
-                
-                <!-- Static ordered list -->
-                <ol id="originalBookList">
+                <ol>
                     <li>The Art of War</li>
                     <li>Charting and Technical Analysis</li>
                     <li>Harry Potter and Chamber of Secrets</li>
@@ -28,13 +26,6 @@
                     <li>Can't Hurt Me</li>
                     <li>Harry Potter and the Order of the Phoenix</li>
                 </ol>
-
-                <!-- Buttons to trigger sorting -->
-                <button onclick="topToBottom()">Top to Bottom</button>
-                <button onclick="bottomToTop()">Bottom to Top</button>
-
-                <!-- Div to display the sorted list of books -->
-                <div id="sortedBookList"></div>
             </div> 
             
             <div class="right-div">
@@ -53,46 +44,5 @@
             <a href="../index.html">Portal Page</a>
         </div>  
     </div>
-
-    <script>
-       // Array of Top Books
-       const TopBooks = [
-           "The Art of War", 
-           "Charting and Technical Analysis", 
-           "Harry Potter and Chamber of Secrets",
-           "Harry Potter and the Goblet of Fire", 
-           "Naruto Shippuden Manga", 
-           "DragonBall Z Manga", 
-           "Lord of the Rings",
-           "48 Laws of Power", 
-           "Can't Hurt Me", 
-           "Harry Potter and the Order of the Phoenix"
-       ];
-
-       // Function to display the array elements in ascending order
-       function topToBottom() {
-           let sortedBooks = TopBooks.slice().sort();  // Sort in ascending order
-           let output = "<h2>Books (Top to Bottom):</h2><ol>";
-
-           for (let i = 0; i < sortedBooks.length; i++) {
-               output += "<li>" + sortedBooks[i] + "</li>";
-           }
-           output += "</ol>";
-           document.getElementById("sortedBookList").innerHTML = output;
-       }
-
-       // Function to display the array elements in descending order
-       function bottomToTop() {
-           let sortedBooks = TopBooks.slice().sort().reverse();  // Sort in descending order
-           let output = "<h2>Books (Bottom to Top):</h2><ol>";
-
-           for (let i = 0; i < sortedBooks.length; i++) {
-               output += "<li>" + sortedBooks[i] + "</li>";
-           }
-           output += "</ol>";
-           document.getElementById("sortedBookList").innerHTML = output;
-       }
-    </script>
-
 </body>
 </html>
